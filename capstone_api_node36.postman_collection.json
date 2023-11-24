@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "882c8094-c6d7-4d12-8ad1-2e49ce1afd44",
+		"name": "capstone_api_node36",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30920119"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"huytest@gmail.com\",\r\n  \"mat_khau\": \"0000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"huytest1234@gmail.com\",\r\n  \"mat_khau\": \"1234\",\r\n  \"ho_ten\": \"Nguyen Thanh Huy\",\r\n  \"tuoi\": 22,\r\n  \"anh_dai_dien\": \"images/avatarhuy.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-list-picture",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/picture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"picture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-list-picture-by-name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/picture/hình 10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"picture",
+						"hình 10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-picture-detail-by-pictureid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/picture/detail/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"picture",
+						"detail",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-comment-by-pictureid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/comment/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comment",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-picture-save-by-pictureid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/save-image/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"save-image",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-comment-by-userid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMSwiZW1haWwiOiJodXlAZ21haWwuY29tIn0sImlhdCI6MTcwMDc5MzQ3OSwiZXhwIjoxNzAwNzk3MDc5fQ.cqFCF5cFnxefNBcMRF5xO_kQw6yZShEr5RvfgySXUFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hinh_id\": 10,\r\n  \"ngay_binh_luan\": \"2023-11-24T02:37:01.983Z\",\r\n  \"noi_dung\": \"hinh số 10 đẹp quá\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/comment/post-comment/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comment",
+						"post-comment",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-property-user-by-userid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMSwiZW1haWwiOiJodXlAZ21haWwuY29tIn0sImlhdCI6MTcwMDc5MzQ3OSwiZXhwIjoxNzAwNzk3MDc5fQ.cqFCF5cFnxefNBcMRF5xO_kQw6yZShEr5RvfgySXUFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hinh_id\": 10,\r\n  \"ngay_binh_luan\": \"2023-11-24T02:37:01.983Z\",\r\n  \"noi_dung\": \"hinh số 10 đẹp quá\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-picture-saved-by-userid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMSwiZW1haWwiOiJodXlAZ21haWwuY29tIn0sImlhdCI6MTcwMDc5MzQ3OSwiZXhwIjoxNzAwNzk3MDc5fQ.cqFCF5cFnxefNBcMRF5xO_kQw6yZShEr5RvfgySXUFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hinh_id\": 10,\r\n  \"ngay_binh_luan\": \"2023-11-24T02:37:01.983Z\",\r\n  \"noi_dung\": \"hinh số 10 đẹp quá\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/5/picture-save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"5",
+						"picture-save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-picture-created-by-userid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMSwiZW1haWwiOiJodXlAZ21haWwuY29tIn0sImlhdCI6MTcwMDc5MzQ3OSwiZXhwIjoxNzAwNzk3MDc5fQ.cqFCF5cFnxefNBcMRF5xO_kQw6yZShEr5RvfgySXUFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hinh_id\": 10,\r\n  \"ngay_binh_luan\": \"2023-11-24T02:37:01.983Z\",\r\n  \"noi_dung\": \"hinh số 10 đẹp quá\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/5/picture-created",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"5",
+						"picture-created"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-picture-by-pictureid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMSwiZW1haWwiOiJodXlAZ21haWwuY29tIn0sImlhdCI6MTcwMDc5MzQ3OSwiZXhwIjoxNzAwNzk3MDc5fQ.cqFCF5cFnxefNBcMRF5xO_kQw6yZShEr5RvfgySXUFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hinh_id\": 10,\r\n  \"ngay_binh_luan\": \"2023-11-24T02:37:01.983Z\",\r\n  \"noi_dung\": \"hinh số 10 đẹp quá\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/picture/78",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"picture",
+						"78"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-picture-by-userid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMSwiZW1haWwiOiJodXlAZ21haWwuY29tIn0sImlhdCI6MTcwMDc5MzQ3OSwiZXhwIjoxNzAwNzk3MDc5fQ.cqFCF5cFnxefNBcMRF5xO_kQw6yZShEr5RvfgySXUFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/ASUS/Pictures/Screenshots/Screenshot 2023-11-23 160546.png"
+						},
+						{
+							"key": "pictureName",
+							"value": "hình code đẹp",
+							"type": "text"
+						},
+						{
+							"key": "pictureDesc",
+							"value": "hình screenshot code",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/picture/upload-picture/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"picture",
+						"upload-picture",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-user-by-userid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMSwiZW1haWwiOiJodXlAZ21haWwuY29tIn0sImlhdCI6MTcwMDc5MzQ3OSwiZXhwIjoxNzAwNzk3MDc5fQ.cqFCF5cFnxefNBcMRF5xO_kQw6yZShEr5RvfgySXUFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user1@gmail.com\",\r\n  \"ho_ten\": \"Nguyen Thanh Huy 1\",\r\n  \"tuoi\": 22,\r\n  \"anh_dai_dien\": \"avatar-update-user1.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/1/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"1",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
