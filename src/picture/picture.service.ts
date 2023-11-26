@@ -40,7 +40,9 @@ export class PictureService {
   async getListPicturesByName(name: string) {
     const data = await this.prisma.hinh_anh.findMany({
       where: {
-        ten_hinh: name,
+        ten_hinh: {
+          contains: name,
+        },
       },
     });
     return { data };
